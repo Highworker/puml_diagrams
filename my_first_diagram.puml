@@ -1,0 +1,37 @@
+@startuml
+
+header Page Header
+footer Page %page% of %lastpage%
+
+alt successful case
+    group Successful case
+
+
+
+Bob -[#red]>x Alice
+    note left: this is a first note
+activate Alice #gray
+Bob -[#gray]> Alice
+Bob ->> Alice
+deactivate Alice
+end
+    group Negative case
+Bob -\ Alice
+    note right: this is another note
+
+Bob \\- Alice
+...5 minutes later...
+Bob //-- Alice
+end
+
+autonumber 1.1.1
+else some kind of failure
+Bob ->o Alice
+autonumber inc A
+Bob o\\-- Alice
+autonumber inc B
+Bob <-> Alice
+Bob <->o Alice
+
+
+@enduml
